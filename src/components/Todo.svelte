@@ -8,18 +8,13 @@
   };
 
   const addTask = () => {
-    tasks.update(() => [...$tasks, getTask()]);
+    tasks.update(() => [...$tasks, task]);
+    task = "";
   };
 
   const deleteTask = id => {
     tasks.update(() => $tasks.filter((el, index) => index !== id));
   };
-
-  function getTask() {
-    let input = document.querySelector(".form__field").value;
-    task = "";
-    return input;
-  }
 </script>
 
 <style>
